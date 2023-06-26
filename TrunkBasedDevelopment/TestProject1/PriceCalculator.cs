@@ -7,12 +7,24 @@ public class PriceCalculator
     {
         var basePriceFor = BasePriceFor(basket);
         var deliveryPriceFor = DeliveryPriceFor(basePriceFor, country);
-
+        var totalBeforeDiscount = basePriceFor + deliveryPriceFor;
+        var discount = discountFor(totalBeforeDiscount);
+        var total = totalBeforeDiscount - discount;
         return new BillInfo(basket,
             basePriceFor,
             deliveryPriceFor,
-            0,
-            basePriceFor + deliveryPriceFor);
+            discount,
+            total);
+    }
+
+    private int discountFor(int total)
+    {
+        if (total > 100)
+        {
+            return (int)(total * 0.1);
+        }
+
+        return 0;
     }
 
     public int BasePriceFor(Basket basket)

@@ -1,0 +1,7 @@
+﻿Lines:
+	Flamingo - 3 units * 100$. Total 275
+Base price: 300$
+Delivery cost: 5$
+Discount: 30$
+
+Total: 275$
