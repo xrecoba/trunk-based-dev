@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using System.Xml.Schema;
 
 namespace TestProject1
 {
@@ -71,7 +72,7 @@ namespace TestProject1
             sb.AppendLine("Lines:");
             foreach (var line in billInfo.Lines)
             {
-                sb.AppendLine($"\t{line.Article} - {line.Quantity} units * {line.Price}$");
+                sb.AppendLine($"\t{line.Article} - {line.Quantity} units * {line.BasePrice}$ - {line.Discount} discount$. Total {line.Price}" );
             }
             sb.AppendLine($"Base price: {billInfo.BasePrice}$");
             sb.AppendLine($"Delivery cost: {billInfo.DeliveryPrice}$");

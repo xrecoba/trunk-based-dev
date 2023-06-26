@@ -1,6 +1,6 @@
 ﻿Lines:
-	Cheap toy - 1 units * 19$
-	Another cheap toy - 1 units * 15$
+	Cheap toy - 1 units * 19$ - 0 discount$. Total 39
+	Another cheap toy - 1 units * 15$ - 0 discount$. Total 39
 Base price: 34$
 Delivery cost: 5$
 
