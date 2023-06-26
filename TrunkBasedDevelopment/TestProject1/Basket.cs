@@ -10,7 +10,6 @@ public class Basket
             Articles.Add(article);
         }
     }
-
     public int TotalPrice => Articles.Sum(a => a.Price);
 
     public List<Article> Articles { get; }
