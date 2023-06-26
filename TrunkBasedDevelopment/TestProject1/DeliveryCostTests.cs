@@ -76,6 +76,7 @@ namespace TestProject1
             }
             sb.AppendLine($"Base price: {billInfo.BasePrice}$");
             sb.AppendLine($"Delivery cost: {billInfo.DeliveryPrice}$");
+            sb.AppendLine($"Discount: {billInfo.Discount}$");
             sb.AppendLine();
             sb.AppendLine($"Total: {billInfo.TotalPrice}$");
 

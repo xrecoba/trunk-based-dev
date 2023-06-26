@@ -2,5 +2,6 @@
 	Expensive article - 1 units * 500$. Total 500
 Base price: 500$
 Delivery cost: 0$
+Discount: 0$
 
 Total: 500$

@@ -3,5 +3,6 @@
 	Another cheap toy - 1 units * 15$. Total 39
 Base price: 34$
 Delivery cost: 5$
+Discount: 0$
 
 Total: 39$
