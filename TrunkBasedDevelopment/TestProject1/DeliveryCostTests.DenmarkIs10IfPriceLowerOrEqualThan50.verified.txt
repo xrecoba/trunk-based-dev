@@ -1,5 +1,5 @@
 ﻿Lines:
-	Cheap article - 49$
+	Cheap article - 1 units * 49$
 Base price: 49$
 Delivery cost: 10$
 

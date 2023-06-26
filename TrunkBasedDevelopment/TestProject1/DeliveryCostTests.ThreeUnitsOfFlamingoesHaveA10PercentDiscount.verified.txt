@@ -1,5 +1,5 @@
 ﻿Lines:
-	Flamingo - 100$
+	Flamingo - 3 units * 100$
 Base price: 300$
 Delivery cost: 5$
 

@@ -4,7 +4,7 @@ public class BillInfo
 {
     public BillInfo(Basket basket, int basePrice, int deliveryPrice, int totalPrice)
     {
-        Lines = basket.Articles.Select(a => new BillLine(a.Name, a.Price));
+        Lines = basket.Articles.Select(a => new BillLine(a.Name, a.Price, a.Quantity));
         BasePrice = basePrice;
         DeliveryPrice = deliveryPrice;
         TotalPrice = totalPrice;
@@ -18,15 +18,17 @@ public class BillInfo
 
     public class BillLine
     {
-        public BillLine(string article, int price)
+        public BillLine(string article, int price, int quantity)
         {
             Article = article;
             Price = price;
+            Quantity = quantity;
         }
 
         public string Article { get; }
 
         public int Price { get; }
+        public int Quantity { get; }
     }
 
 }

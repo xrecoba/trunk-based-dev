@@ -47,6 +47,19 @@ namespace TestProject1
 
             return Verify(printedBillInfo);
         }
+
+        [Fact]
+        public Task ThreeUnitsOfFlamingoesHaveA10PercentDiscount()
+        {
+            var priceCalculator = new PriceCalculator();
+            var basket = new Basket(new Article("Flamingo", 100, 3));
+
+            var billInfo = priceCalculator.GetPriceOf(basket, "Sweden");
+
+            string printedBillInfo = BillPrinter.Print(billInfo);
+
+            return Verify(printedBillInfo);
+        }
     }
 
     public class BillPrinter
@@ -58,7 +71,7 @@ namespace TestProject1
             sb.AppendLine("Lines:");
             foreach (var line in billInfo.Lines)
             {
-                sb.AppendLine($"\t{line.Article} - {line.Price}$");
+                sb.AppendLine($"\t{line.Article} - {line.Quantity} units * {line.Price}$");
             }
             sb.AppendLine($"Base price: {billInfo.BasePrice}$");
             sb.AppendLine($"Delivery cost: {billInfo.DeliveryPrice}$");
