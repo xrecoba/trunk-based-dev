@@ -4,6 +4,7 @@ using System.Text;
 
 namespace TestProject1
 {
+    //Test
     [UsesVerify]
     public class DeliveryCostTests
     {
