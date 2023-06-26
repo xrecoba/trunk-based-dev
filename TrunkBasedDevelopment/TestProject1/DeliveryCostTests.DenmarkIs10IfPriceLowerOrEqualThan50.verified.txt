@@ -1,0 +1,7 @@
+﻿Lines:
+	Cheap article x 49$
+Base price: 49$
+Delivery cost: 10$
+Discount: 0$
+
+Total: 59$

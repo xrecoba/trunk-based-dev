@@ -1,7 +1,0 @@
-﻿Lines:
-	Expensive article - 1 units * 500$. Total 450
-Base price: 500$
-Delivery cost: 0$
-Discount: 50$
-
-Total: 450$

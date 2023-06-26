@@ -1,7 +1,7 @@
 ﻿Lines:
-	Expensive article - 1 units * 500$. Total 500
+	Expensive article x 500$
 Base price: 500$
 Delivery cost: 0$
-Discount: 0$
+Discount: 50$
 
-Total: 500$
+Total: 450$

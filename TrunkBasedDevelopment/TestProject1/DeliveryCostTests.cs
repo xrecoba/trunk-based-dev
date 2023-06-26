@@ -53,7 +53,7 @@ namespace TestProject1
         public Task ThreeUnitsOfFlamingoesHaveA10PercentDiscount()
         {
             var priceCalculator = new PriceCalculator();
-            var basket = new Basket(new Article("Flamingo", 100, 3));
+            var basket = new Basket(new Article("Flamingo", 100));
 
             var billInfo = priceCalculator.GetPriceOf(basket, "Sweden");
 
@@ -72,7 +72,7 @@ namespace TestProject1
             sb.AppendLine("Lines:");
             foreach (var line in billInfo.Lines)
             {
-                sb.AppendLine($"\t{line.Article} - {line.Quantity} units * {line.BasePrice}$. Total {line.Price}" );
+                sb.AppendLine($"\t{line.Article} x {line.Price}$" );
             }
             sb.AppendLine($"Base price: {billInfo.BasePrice}$");
             sb.AppendLine($"Delivery cost: {billInfo.DeliveryPrice}$");

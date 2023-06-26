@@ -29,7 +29,7 @@ public class PriceCalculator
 
     public int BasePriceFor(Basket basket)
     {
-        return basket.Articles.Sum(a => a.Price * a.Quantity);
+        return basket.Articles.Sum(a => a.Price);
     }
 
     private int DeliveryPriceFor(int price, string country)
