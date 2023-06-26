@@ -10,6 +10,7 @@ public class PriceCalculator
         return new BillInfo(basket,
             basePriceFor,
             deliveryPriceFor,
+            0,
             basePriceFor + deliveryPriceFor);
     }
 
