@@ -17,11 +17,6 @@ public class PriceCalculator
         return basket.Articles.Sum(a => a.Price);
     }
 
-
-       
-
-
-
     private int DeliveryPriceFor(Basket basket, string country)
     {
         if (country == "Sweden")
