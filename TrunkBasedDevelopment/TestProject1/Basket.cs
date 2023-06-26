@@ -2,42 +2,29 @@ namespace TestProject1;
 
 public class Basket
 {
-    private readonly List<Article> _articles;
-
     public Basket(params Article[] articles)
     {
-        _articles = new();
+        Articles = new();
         foreach (var article in articles)
         {
-            _articles.Add(article);
+            Articles.Add(article);
         }
     }
 
-    public int TotaPrice
-    {
-        get => Articles.Sum(a => a.Price);
-    }
+    public int TotalPrice => Articles.Sum(a => a.Price);
 
-    public List<Article> Articles => _articles;
-
-    public void Add(Article article)
-    {
-        Articles.Add(article);
-    }
+    public List<Article> Articles { get; }
 }
 
 public class Article
 {
-    private readonly string _name;
-    private readonly int _price;
-
     public Article(string name, int price)
     {
-        _name = name;
-        _price = price;
+        Name = name;
+        Price = price;
     }
 
-    public int Price => _price;
+    public int Price { get; }
 
-    public string Name => _name;
+    public string Name { get; }
 }
