@@ -28,5 +28,4 @@ public class BillInfo
 
         public int Price { get; }
     }
-
 }

@@ -2,7 +2,6 @@ namespace TestProject1;
 
 public class PriceCalculator
 {
-
     public BillInfo GetPriceOf(Basket basket, string country)
     {
         var basePriceFor = BasePriceFor(basket);
@@ -18,12 +17,17 @@ public class PriceCalculator
         return basket.Articles.Sum(a => a.Price);
     }
 
+
+
+
+
+
     private int DeliveryPriceFor(Basket basket, string country)
     {
         if (country == "Sweden")
             return 5;
 
-        if (basket.TotaPrice < 50)
+        if (basket.TotalPrice < 50)
         {
             return 10;
         }

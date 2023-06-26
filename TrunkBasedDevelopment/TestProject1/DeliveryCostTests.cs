@@ -50,9 +50,8 @@ namespace TestProject1
     }
 
     public class BillPrinter
-
     {
-        public static string Print(BillInfo billInfo)
+        public string Print(BillInfo billInfo)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Lines:");
