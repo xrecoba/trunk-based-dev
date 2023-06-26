@@ -18,7 +18,7 @@ public class Basket
 
 public class Article
 {
-    public Article(string name, int price)
+    public Article(string name, int price) 
     {
         Name = name;
         Price = price;
