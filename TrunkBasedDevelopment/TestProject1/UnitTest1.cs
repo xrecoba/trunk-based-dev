@@ -1,7 +1,5 @@
 namespace TestProject1
 {
-
-
     public class UnitTest1
     {
         [Fact]
@@ -10,7 +8,7 @@ namespace TestProject1
             var priceCalculator = new PriceCalculator();
             var basket = new Basket(new Article("Expensive stuff", 500));
             var price = priceCalculator.PriceFor(basket, "Denmark");
-            Assert.Equal(0, price);
+            Assert.Equal(500, price);
         }
 
         [Fact]
@@ -19,7 +17,7 @@ namespace TestProject1
             var priceCalculator = new PriceCalculator();
             var basket = new Basket(new Article("Cheap toy", 49));
             var price = priceCalculator.PriceFor(basket, "Denmark");
-            Assert.Equal(10, price);
+            Assert.Equal(59, price);
         }
 
         [Fact]
@@ -28,13 +26,20 @@ namespace TestProject1
             var priceCalculator = new PriceCalculator();
             var basket = new Basket(new Article("Cheap toy", 49));
             var price = priceCalculator.PriceFor(basket, "Sweden");
-            Assert.Equal(5, price);
+            Assert.Equal(54, price);
         }
     }
 
     public class PriceCalculator
     {
         public int PriceFor(Basket basket, string country)
+        {
+            var basketCost = basket.TotaPrice;
+            var totalCost = basketCost + DeliveryCost(basket, country);
+            return totalCost;
+        }
+
+        private static int DeliveryCost(Basket basket, string country)
         {
             if (country == "Sweden")
                 return 5;
@@ -43,6 +48,7 @@ namespace TestProject1
             {
                 return 10;
             }
+
             return 0;
         }
     }
