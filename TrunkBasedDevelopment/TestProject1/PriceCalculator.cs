@@ -7,9 +7,11 @@ public class PriceCalculator
     {
         var basePriceFor = BasePriceFor(basket);
         var deliveryPriceFor = DeliveryPriceFor(basket, country);
+        bool hasFragilitySurcharge = HasFacilitySurcharge(basket);
         return new BillInfo(basket,
             basePriceFor,
             deliveryPriceFor,
+            hasFragilitySurcharge,
             basePriceFor + deliveryPriceFor);
     }
 
@@ -20,7 +22,7 @@ public class PriceCalculator
 
     private int DeliveryPriceFor(Basket basket, string country)
     {
-        var fragilityCharge = basket.Articles.Any(a => a.IsFragile) ? 10 : 0;
+        var fragilityCharge = HasFacilitySurcharge(basket) ? 10 : 0;
 
         if (country == "Sweden")
             return 5 + fragilityCharge;
@@ -31,5 +33,10 @@ public class PriceCalculator
         }
 
         return 0 + fragilityCharge;
+    }
+
+    private static bool HasFacilitySurcharge(Basket basket)
+    {
+        return basket.Articles.Any(a => a.IsFragile);
     }
 }

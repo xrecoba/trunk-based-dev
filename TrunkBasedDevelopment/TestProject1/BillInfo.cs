@@ -2,11 +2,12 @@ namespace TestProject1;
 
 public class BillInfo
 {
-    public BillInfo(Basket basket, int basePrice, int deliveryPrice, int totalPrice)
+    public BillInfo(Basket basket, int basePrice, int deliveryPrice, bool hasFragilitySurcharge, int totalPrice)
     {
         Lines = basket.Articles.Select(a => new BillLine(a.Name, a.Price));
         BasePrice = basePrice;
         DeliveryPrice = deliveryPrice;
+        HasFragilitySurcharge = hasFragilitySurcharge;
         TotalPrice = totalPrice;
     }
 
@@ -14,6 +15,7 @@ public class BillInfo
 
     public int BasePrice { get; }
     public int DeliveryPrice { get; }
+    public bool HasFragilitySurcharge { get; }
     public int TotalPrice { get; }
 
     public class BillLine
