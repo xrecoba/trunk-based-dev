@@ -1,5 +1,5 @@
 ﻿Lines:
-	Cheap article - 1 units * 49$ - 0 discount$. Total 59
+	Cheap article - 1 units * 49$. Total 59
 Base price: 49$
 Delivery cost: 10$
 

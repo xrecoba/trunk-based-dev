@@ -2,9 +2,9 @@ namespace TestProject1;
 
 public class BillInfo
 {
-    public BillInfo(Basket basket, int basePrice, int deliveryPrice, int discount, int totalPrice)
+    public BillInfo(Basket basket, int basePrice, int deliveryPrice, int totalPrice)
     {
-        Lines = basket.Articles.Select(a => new BillLine(a.Name, a.Price, a.Quantity, discount, totalPrice));
+        Lines = basket.Articles.Select(a => new BillLine(a.Name, a.Price, a.Quantity, totalPrice));
         BasePrice = basePrice;
         DeliveryPrice = deliveryPrice;
         TotalPrice = totalPrice;
@@ -18,12 +18,11 @@ public class BillInfo
 
     public class BillLine
     {
-        public BillLine(string article, int basePrice, int quantity, int discount, int totalPrice)
+        public BillLine(string article, int basePrice, int quantity, int totalPrice)
         {
             Article = article;
             BasePrice = basePrice;
             Quantity = quantity;
-            Discount = discount;
             Price = totalPrice;
         }
 
@@ -32,7 +31,6 @@ public class BillInfo
         public int BasePrice { get; }
         public int Quantity { get; }
 
-        public int Discount { get; }
         public int Price { get; set; }
     }
 

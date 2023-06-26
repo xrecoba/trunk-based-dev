@@ -7,10 +7,11 @@ public class PriceCalculator
     {
         var basePriceFor = BasePriceFor(basket);
         var deliveryPriceFor = DeliveryPriceFor(basePriceFor, country);
+        
+
         return new BillInfo(basket,
             basePriceFor,
             deliveryPriceFor,
-            0,
             basePriceFor + deliveryPriceFor);
     }
 
