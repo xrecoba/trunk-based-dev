@@ -15,7 +15,7 @@ public class Basket
 
     public int TotaPrice
     {
-        get => Articles.Sum(a => a.Price);
+        get => Articles.Sum(a => a.Price * a.Quantity);
     }
 
     public List<Article> Articles => _articles;
@@ -30,14 +30,18 @@ public class Article
 {
     private readonly string _name;
     private readonly int _price;
+    private readonly int _quantity;
 
-    public Article(string name, int price)
+    public Article(string name, int price, int quantity = 1)
     {
         _name = name;
         _price = price;
+        _quantity = quantity;
     }
 
     public int Price => _price;
 
     public string Name => _name;
+
+    public int Quantity => _quantity;
 }

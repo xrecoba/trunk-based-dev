@@ -6,7 +6,7 @@ public class PriceCalculator
     public BillInfo GetPriceOf(Basket basket, string country)
     {
         var basePriceFor = BasePriceFor(basket);
-        var deliveryPriceFor = DeliveryPriceFor(basket, country);
+        var deliveryPriceFor = DeliveryPriceFor(basePriceFor, country);
         return new BillInfo(basket,
             basePriceFor,
             deliveryPriceFor,
@@ -15,15 +15,15 @@ public class PriceCalculator
 
     public int BasePriceFor(Basket basket)
     {
-        return basket.Articles.Sum(a => a.Price);
+        return basket.Articles.Sum(a => a.Price * a.Quantity);
     }
 
-    private int DeliveryPriceFor(Basket basket, string country)
+    private int DeliveryPriceFor(int price, string country)
     {
         if (country == "Sweden")
             return 5;
 
-        if (basket.TotaPrice < 50)
+        if (price < 50)
         {
             return 10;
         }

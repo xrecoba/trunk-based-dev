@@ -1,0 +1,6 @@
+﻿Lines:
+	Flamingo - 100$
+Base price: 300$
+Delivery cost: 5$
+
+Total: 305$
