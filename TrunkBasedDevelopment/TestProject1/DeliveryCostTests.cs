@@ -47,6 +47,21 @@ namespace TestProject1
 
             return Verify(printedBillInfo);
         }
+
+        [Fact]
+        public Task SwedenDeliveryCostIs5NoMatterWhatWithFragileArticle()
+        {
+            var priceCalculator = new PriceCalculator();
+            var basket = new Basket(new Article("Cheap toy", 19, true),
+                new Article("Another cheap toy", 15));
+
+            var billInfo = priceCalculator.GetPriceOf(basket, "Sweden");
+
+            string printedBillInfo = BillPrinter.Print(billInfo);
+
+            return Verify(printedBillInfo);
+        }
+
     }
 
     public class BillPrinter

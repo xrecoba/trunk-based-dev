@@ -20,14 +20,16 @@ public class PriceCalculator
 
     private int DeliveryPriceFor(Basket basket, string country)
     {
+        var fragilityCharge = basket.Articles.Any(a => a.IsFragile) ? 10 : 0;
+
         if (country == "Sweden")
-            return 5;
+            return 5 + fragilityCharge;
 
         if (basket.TotaPrice < 50)
         {
-            return 10;
+            return 10 + fragilityCharge;
         }
 
-        return 0;
+        return 0 + fragilityCharge;
     }
 }

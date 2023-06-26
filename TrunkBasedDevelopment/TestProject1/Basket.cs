@@ -28,11 +28,13 @@ public class Basket
 
 public class Article
 {
+    public bool IsFragile { get; }
     private readonly string _name;
     private readonly int _price;
 
-    public Article(string name, int price)
+    public Article(string name, int price, bool isFragile = false)
     {
+        IsFragile = isFragile;
         _name = name;
         _price = price;
     }

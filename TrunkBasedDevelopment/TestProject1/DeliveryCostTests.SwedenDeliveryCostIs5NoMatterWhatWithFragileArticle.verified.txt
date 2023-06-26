@@ -1,0 +1,7 @@
+﻿Lines:
+	Cheap toy - 19$
+	Another cheap toy - 15$
+Base price: 34$
+Delivery cost: 15$
+
+Total: 49$
