@@ -17,13 +17,16 @@ public class Basket
 
 public class Article
 {
-    public Article(string name, int price) 
+    public Article(string name, int price, bool isFragile = false) 
     {
         Name = name;
         Price = price;
+        IsFragile = isFragile;
     }
 
     public int Price { get; }
 
     public string Name { get; }
+
+    public bool IsFragile { get; }
 }
