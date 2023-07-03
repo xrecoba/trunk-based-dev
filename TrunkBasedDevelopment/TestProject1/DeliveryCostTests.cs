@@ -48,6 +48,19 @@ namespace TestProject1
 
             return Verify(printedBillInfo);
         }
+
+        [Fact]
+        public Task IfPriceOver100Then10PercentDiscountBeforeDelivery()
+        {
+            var priceCalculator = new PriceCalculator();
+            var basket = new Basket(new Article("Not cheap toy", 101));
+
+            var billInfo = priceCalculator.GetPriceOf(basket, "Sweden");
+
+            string printedBillInfo = BillPrinter.Print(billInfo);
+
+            return Verify(printedBillInfo);
+        }
     }
 
     public class BillPrinter
