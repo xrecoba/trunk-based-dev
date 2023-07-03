@@ -1,6 +1,7 @@
 ﻿Lines:
 	Cheap article - 49$
 Base price: 49$
+Reduced price: 49$
 Delivery cost: 10$
 
 Total: 59$

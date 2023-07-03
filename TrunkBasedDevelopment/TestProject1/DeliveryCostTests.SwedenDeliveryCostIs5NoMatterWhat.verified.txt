@@ -2,6 +2,7 @@
 	Cheap toy - 19$
 	Another cheap toy - 15$
 Base price: 34$
+Reduced price: 34$
 Delivery cost: 5$
 
 Total: 39$

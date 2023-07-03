@@ -1,6 +1,7 @@
 ﻿Lines:
 	Expensive article - 500$
 Base price: 500$
+Reduced price: 500$
 Delivery cost: 0$
 
 Total: 500$
