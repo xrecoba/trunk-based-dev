@@ -50,12 +50,12 @@ namespace TestProject1
         }
 
         [Fact]
-        public Task IfPriceOver100Then10PercentDiscountBeforeDelivery()
+        public Task IfBasketHasFragileArticleDeliveryCostIs10()
         {
             var priceCalculator = new PriceCalculator();
-            var basket = new Basket(new Article("Not cheap toy", 101));
+            var basket = new Basket(new Article("Fragile toy", 101, isFragile: true));
 
-            var billInfo = priceCalculator.GetPriceOf(basket, "Sweden");
+            var billInfo = priceCalculator.GetPriceOf(basket, "Denmark");
 
             string printedBillInfo = BillPrinter.Print(billInfo);
 
