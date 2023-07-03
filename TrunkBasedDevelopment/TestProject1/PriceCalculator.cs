@@ -19,19 +19,20 @@ public class PriceCalculator
 
     private int DeliveryPriceFor(Basket basket, string country)
     {
+        var baseResult = 0;
+        if (basket.Articles.Any(a => a.IsFragile))
+        {
+            baseResult = 10;
+        }
+
         if (country == "Sweden")
-            return 5;
+            return baseResult + 5;
 
         if (basket.TotalPrice < 50)
         {
-            return 10;
+            return baseResult + 10;
         }
 
-        if (basket.Articles.Any(a => a.IsFragile))
-        {
-            return 10;
-        }
-
-        return 0;
+        return baseResult;
     }
 }

@@ -1,6 +1,7 @@
 ﻿Lines:
 	Fragile toy - 101$
 Base price: 101$
+Reduced price: 101$
 Delivery cost: 10$
 
 Total: 111$
