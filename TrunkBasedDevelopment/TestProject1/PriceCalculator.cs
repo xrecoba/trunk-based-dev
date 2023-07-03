@@ -27,6 +27,11 @@ public class PriceCalculator
             return 10;
         }
 
+        if (basket.Articles.Any(a => a.IsFragile))
+        {
+            return 10;
+        }
+
         return 0;
     }
 }
