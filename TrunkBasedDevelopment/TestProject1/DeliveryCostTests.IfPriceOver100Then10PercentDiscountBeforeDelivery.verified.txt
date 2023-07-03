@@ -1,6 +1,7 @@
 ﻿Lines:
 	Not cheap toy - 101$
 Base price: 101$
+Reduced price: 101$
 Delivery cost: 5$
 
 Total: 106$
