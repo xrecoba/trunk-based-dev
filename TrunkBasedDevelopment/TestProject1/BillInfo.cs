@@ -6,6 +6,7 @@ public class BillInfo
     {
         Lines = basket.Articles.Select(a => new BillLine(a.Name, a.Price));
         BasePrice = basePrice;
+        ReducedPrice = basePrice;
         DeliveryPrice = deliveryPrice;
         TotalPrice = totalPrice;
     }
@@ -13,6 +14,7 @@ public class BillInfo
     public IEnumerable<BillLine> Lines { get; }
 
     public int BasePrice { get; }
+    public int ReducedPrice { get; }
     public int DeliveryPrice { get; }
     public int TotalPrice { get; }
 
